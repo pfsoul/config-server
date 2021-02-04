@@ -1,0 +1,17 @@
+# 数据库连接串 & 密码
+spring:
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/foodie-shop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC'
+    username: '{cipher}784a768ec562a1d6113c7313c90e05d1ae5c3215bb7e3a87afe3cf9863e63a58'
+    password: '{cipher}f51e4ea1a65af5509d38d98f91243a55e149bf43727a153d3f3c2cee4131242a'
+  redis:
+    # Redis 单机实例
+    database: 0
+    host: 132.232.178.235
+    port: 6379
+    password: '{cipher}f51e4ea1a65af5509d38d98f91243a55e149bf43727a153d3f3c2cee4131242a'
+
+# 功能开关 - 开启/关闭注册功能
+userservice:
+  registration:
+    disable: true
