@@ -25,4 +25,4 @@ spring:
 # 功能开关 - 开启/关闭注册功能
 userservice:
   registration:
-    disable: true
+    disable: false
