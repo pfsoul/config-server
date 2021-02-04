@@ -1,9 +1,20 @@
 # 数据库连接串 & 密码
 spring:
   datasource:
-    url: 'jdbc:mysql://localhost:3306/foodie-shop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC'
+    url: 'jdbc:mysql://132.232.178.235:3306/foodie-shop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC'
     username: '{cipher}20f8b0a5d9d886405655ea79c3b8e19d41bbd6490cb7855c1716e61507275ce4'
     password: '{cipher}c9c64f48989d139ff6710d81f98574b5b9a7daab154d67e8c80ac7a47e93a1bc'
+    type: com.zaxxer.hikari.HikariDataSource  #数据源类型，HikariCP
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000    # 等待连接池分配连接的最大市场，超过这个市场还没可用连接则发生SQLException 默认30秒
+      minimum-idle: 5              # 最小连接数
+      maximum-pool-size: 20        # 最大连接数
+      auto-commit: true            # 自动提交
+      idle-timeout: 600000         # 连接超时的最大时长，超时则被释放，默认十分钟
+      pool-name: DateSourceHikariCP #连接池名字
+      max-lifetime: 1800000        # 连接的生命时长，超时没有被使用则被释放（retired）默认30分钟
+      connection-test-query: SELECT 1 # 以上基本时间单位均为毫秒
   redis:
     # Redis 单机实例
     database: 0
